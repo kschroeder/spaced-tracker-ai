@@ -12,7 +12,7 @@ composer require kschroeder/spaced-tracker-ai:^1.0
 
 PHP `^8.2`. Install a library only when you use that adapter. The adapters do not load a dotenv file. [`.env.example`](.env.example) lists `XAI_API_KEY`, `XAI_MODEL`, and `XAI_BASE_URL`. Pass the key into the SDK or into `OpenAiCompatibleLanguageModel`.
 
-To work on this repository, clone it and run `composer install`. That clones `kschroeder/spaced-tracker` from GitHub, because this checkout's `composer.json` lists that repository. Replace that entry with a path repository of `../spaced-tracker` when Composer should symlink a neighboring checkout instead.
+To work on this repository, clone it and run `composer update`. The repository has no lock file. That command clones `kschroeder/spaced-tracker` from GitHub, because this checkout's `composer.json` lists that repository. Replace that entry with a path repository of `../spaced-tracker` when Composer should symlink a neighboring checkout instead.
 
 ## LLPhant
 
