@@ -1,0 +1,60 @@
+{
+    "name": "kschroeder/spaced-tracker-ai",
+    "description": "Adapters for PHP AI libraries and orbital analysis for kschroeder/spaced-tracker. SpaceXAI is the default model provider.",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0.0",
+    "keywords": ["space-track", "spacexai", "xai", "llm"],
+    "require": {
+        "php": "^8.2",
+        "ext-json": "*",
+        "kschroeder/spaced-tracker": "^1.0",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.1",
+        "psr/http-message": "^1.1 || ^2.0",
+        "psr/log": "^3.0"
+    },
+    "require-dev": {
+        "nyholm/psr7": "^1.8",
+        "phpstan/phpstan": "^2.0",
+        "phpunit/phpunit": "^11.5",
+        "squizlabs/php_codesniffer": "^3.11"
+    },
+    "suggest": {
+        "google-gemini-php/client": "Optional Gemini language-model adapter",
+        "guzzlehttp/guzzle": "PSR-18 client for OpenAiCompatibleLanguageModel",
+        "laravel/ai": "Optional Laravel AI SDK adapter and Space-Track tool",
+        "mozex/anthropic-php": "Optional Anthropic language-model adapter",
+        "neuron-core/neuron-ai": "Optional Neuron AI adapter and Space-Track tool. Supports 3.x and 4.x",
+        "nyholm/psr7": "PSR-7 and PSR-17 implementation",
+        "openai-php/client": "Optional OpenAI PHP client. Point it at https://api.x.ai/v1 for SpaceXAI",
+        "prism-php/prism": "Optional Prism adapter and Space-Track tool. The xai provider calls SpaceXAI",
+        "symfony/ai-agent": "Optional Symfony AI agent toolbox for the Space-Track tool",
+        "symfony/ai-platform": "Optional Symfony AI platform adapter",
+        "theodo-group/llphant": "Optional LLPhant adapter and Space-Track tool"
+    },
+    "autoload": {
+        "psr-4": {
+            "SpacedTracker\\Ai\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SpacedTracker\\Ai\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "cs": "phpcs",
+        "stan": "phpstan analyse --memory-limit=1G"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/kschroeder/spaced-tracker"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<ruleset name="SpacedTracker">
+    <description>PSR-12 for this package.</description>
+    <arg name="basepath" value="."/>
+    <arg name="colors"/>
+    <file>src</file>
+    <file>tests</file>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+
+    <!--
+        PSR-12's 120-character line is a soft limit. Space-Track field names,
+        request URLs, and fixture rows cross it. The hard PSR-12 rules stay on.
+    -->
+    <rule ref="PSR12">
+        <exclude name="Generic.Files.LineLength"/>
+        <exclude name="PSR1.Methods.CamelCapsMethodName"/>
+    </rule>
+    <!--
+        LLPhant calls $instance->{$toolName}(). The tool name is space_track_query,
+        so that one method cannot be camelCase. Every other method stays checked.
+    -->
+    <rule ref="PSR1.Methods.CamelCapsMethodName">
+        <exclude-pattern>*/src/Tool/SpaceTrackQueryAction.php</exclude-pattern>
+    </rule>
+</ruleset>
