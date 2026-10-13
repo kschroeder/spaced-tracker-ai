@@ -4,17 +4,15 @@ Adapters for PHP AI libraries, plus orbital analysis, on top of [kschroeder/spac
 
 The adapter does not read an API key. Whoever constructs the SDK client does. Prompts and keys are not written to the log. Run tools on the server. Do not put `XAI_API_KEY` or `SPACETRACK_PASSWORD` in the browser.
 
-Packagist does not host these packages. Composer does not read repositories from a dependency, so an application has to register each GitHub repository itself:
+Install [kschroeder/spaced-tracker-ai](https://packagist.org/packages/kschroeder/spaced-tracker-ai) from Packagist. Composer installs `kschroeder/spaced-tracker` from Packagist as well:
 
 ```bash
-composer config repositories.spaced-tracker vcs https://github.com/kschroeder/spaced-tracker
-composer config repositories.spaced-tracker-ai vcs https://github.com/kschroeder/spaced-tracker-ai
 composer require kschroeder/spaced-tracker-ai:^1.0
 ```
 
-PHP `^8.2`. Install a library only when you use that adapter. Commands later in this file that require `kschroeder/spaced-tracker-ai` need those two repositories configured first. The adapters do not load a dotenv file. [`.env.example`](.env.example) lists `XAI_API_KEY`, `XAI_MODEL`, and `XAI_BASE_URL`. Pass the key into the SDK or into `OpenAiCompatibleLanguageModel`.
+PHP `^8.2`. Install a library only when you use that adapter. The adapters do not load a dotenv file. [`.env.example`](.env.example) lists `XAI_API_KEY`, `XAI_MODEL`, and `XAI_BASE_URL`. Pass the key into the SDK or into `OpenAiCompatibleLanguageModel`.
 
-To work on this repository, clone it and run `composer install`. That clones `kschroeder/spaced-tracker` from GitHub. Replace that repository entry with a path repository of `../spaced-tracker` when Composer should symlink a neighboring checkout instead.
+To work on this repository, clone it and run `composer install`. That clones `kschroeder/spaced-tracker` from GitHub, because this checkout's `composer.json` lists that repository. Replace that entry with a path repository of `../spaced-tracker` when Composer should symlink a neighboring checkout instead.
 
 ## LLPhant
 
